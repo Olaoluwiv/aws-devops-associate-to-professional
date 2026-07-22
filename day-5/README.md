@@ -84,6 +84,7 @@ Request Flow
 +--------------------------------------+
 ```
 **Step-by-Step Request Execution**
+
 Step 1 — DNS Resolution: The user enters https://app.example.com, route 53 checks the hosted zone and resolves the domain name to the DNS name of the Application Load Balancer.
 
 Step 2 — Traffic Enters AWS: The request reaches the Internet Gateway, which forwards it to the public-facing Application Load Balancer.
