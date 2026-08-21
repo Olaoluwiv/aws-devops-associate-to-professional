@@ -1,0 +1,7 @@
+javascript 
+exports.handler = async (event) => { 
+const response = event.Records[0].cf.response; 
+response.headers['x-custom-header'] = [{ key: 'X-Custom-Header', value: 
+'MyServerlessSite' }]; 
+return response; 
+};
