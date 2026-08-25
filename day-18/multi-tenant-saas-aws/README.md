@@ -1142,6 +1142,11 @@ The next stages are focused on completing the API architecture, authentication, 
 
 ---
 
+
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/801579e7-b6c8-4fdd-8501-17403af0df71" />
+
+
 ## Author
 
 Built as a practical AWS cloud engineering and learning project.
