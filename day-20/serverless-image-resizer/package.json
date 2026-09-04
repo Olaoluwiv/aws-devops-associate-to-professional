@@ -1,0 +1,16 @@
+{
+  "name": "serverless-image-resizer",
+  "version": "1.0.0",
+  "description": "Serverless image resizer using AWS Lambda and Amazon S3",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jimp": "^1.6.1"
+  }
+}
