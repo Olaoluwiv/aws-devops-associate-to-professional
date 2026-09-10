@@ -1,0 +1,57 @@
+# StrongSwan IPsec Configuration Example
+
+# Day 24 — AWS Hybrid Cloud Site-to-Site VPN
+
+#
+
+# IMPORTANT:
+
+# This is a sanitized example configuration.
+
+# Do NOT place real VPN pre-shared keys in GitHub.
+
+config setup
+uniqueids=no
+
+conn Tunnel1
+auto=start
+
+```
+# Local simulated on-premises VPN router
+left=%defaultroute
+leftid=<ON_PREM_PUBLIC_IP>
+
+# AWS VPN Tunnel 1 outside IP
+right=<AWS_TUNNEL_1_OUTSIDE_IP>
+
+type=tunnel
+
+# Authentication
+leftauth=psk
+rightauth=psk
+
+# IKE version
+keyexchange=ikev1
+
+# IKE encryption/integrity/DH parameters
+ike=aes128-sha1-modp1024
+ikelifetime=8h
+
+# IPsec/ESP parameters
+esp=aes128-sha1-modp1024
+lifetime=1h
+
+keyingtries=%forever
+
+# Traffic selectors
+leftsubnet=0.0.0.0/0
+rightsubnet=0.0.0.0/0
+
+# Dead Peer Detection
+dpddelay=10s
+dpdtimeout=30s
+dpdaction=restart
+
+# VTI mark
+mark=100
+```

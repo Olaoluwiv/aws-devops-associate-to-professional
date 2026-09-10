@@ -1,0 +1,23 @@
+# AWS / VPN secrets
+ipsec.secrets
+*.pem
+*.key
+*.p12
+*.crt
+
+# Environment / credentials
+.env
+.env.*
+credentials
+*.credentials
+
+# Terraform / local state
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
