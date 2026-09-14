@@ -1,0 +1,181 @@
+Order ID,Customer Name,Product Category,Product,Quantity,Unit Price,Sales Amount,Profit,Sale Date,Region,Sales Representative,Customer Type
+ORD-1001,John Doe,Electronics,Wireless Mouse,2,25.00,50.00,15.00,2025-01-05,North,Sarah Jenkins,New
+ORD-1002,Jane Smith,Furniture,Ergonomic Chair,1,250.00,250.00,75.00,2025-01-07,East,Mike Ross,Returning
+ORD-1003,Alice Johnson,Clothing,Denim Jacket,3,60.00,180.00,54.00,2025-01-10,South,Rachel Zane,New
+ORD-1004,Bob Brown,Accessories,Leather Wallet,2,40.00,80.00,24.00,2025-01-12,West,Harvey Specter,Returning
+ORD-1005,Charlie Davis,Electronics,Mechanical Keyboard,1,120.00,120.00,36.00,2025-01-15,North,Louis Litt,New
+ORD-1006,Diana Prince,Furniture,Standing Desk,1,450.00,450.00,135.00,2025-01-18,East,Donna Paulsen,Returning
+ORD-1007,Evan Wright,Clothing,Cotton T-Shirt,5,20.00,100.00,30.00,2025-01-20,South,Sarah Jenkins,New
+ORD-1008,Fiona Gallagher,Accessories,Sunglasses,2,50.00,100.00,30.00,2025-01-22,West,Mike Ross,Returning
+ORD-1009,George Clark,Electronics,27-inch Monitor,1,300.00,300.00,90.00,2025-01-25,North,Rachel Zane,New
+ORD-1010,Hannah Abbott,Furniture,Bookshelf,2,110.00,220.00,66.00,2025-01-28,East,Harvey Specter,Returning
+ORD-1011,Ian Malcolm,Clothing,Hoodie,2,45.00,90.00,27.00,2025-02-02,South,Louis Litt,New
+ORD-1012,Julia Roberts,Accessories,Backpack,1,70.00,70.00,21.00,2025-02-05,West,Donna Paulsen,Returning
+ORD-1013,Kevin Bacon,Electronics,Noise-Canceling Headphones,1,200.00,200.00,60.00,2025-02-08,North,Sarah Jenkins,New
+ORD-1014,Laura Croft,Furniture,Office Desk,1,350.00,350.00,105.00,2025-02-11,East,Mike Ross,Returning
+ORD-1015,Michael Scott,Clothing,Dress Shirt,3,35.00,105.00,31.50,2025-02-14,South,Rachel Zane,New
+ORD-1016,Nina Williams,Accessories,Smartwatch,1,180.00,180.00,54.00,2025-02-17,West,Harvey Specter,Returning
+ORD-1017,Oscar Martinez,Electronics,USB-C Hub,4,30.00,120.00,36.00,2025-02-20,North,Louis Litt,New
+ORD-1018,Pam Beesly,Furniture,Desk Lamp,2,40.00,80.00,24.00,2025-02-22,East,Donna Paulsen,Returning
+ORD-1019,Quentin Tarantino,Clothing,Sneakers,1,90.00,90.00,27.00,2025-02-25,South,Sarah Jenkins,New
+ORD-1020,Rachel Green,Accessories,Leather Belt,2,25.00,50.00,15.00,2025-02-28,West,Mike Ross,Returning
+ORD-1021,Steve Rogers,Electronics,Webcam 1080p,1,80.00,80.00,24.00,2025-03-03,North,Rachel Zane,New
+ORD-1022,Tony Stark,Furniture,Executive Chair,1,500.00,500.00,150.00,2025-03-06,East,Harvey Specter,Returning
+ORD-1023,Uma Thurman,Clothing,Winter Coat,1,150.00,150.00,45.00,2025-03-09,South,Louis Litt,New
+ORD-1024,Victor Vance,Accessories,Travel Duffle,1,85.00,85.00,25.50,2025-03-12,West,Donna Paulsen,Returning
+ORD-1025,Wanda Maximoff,Electronics,Bluetooth Speaker,2,60.00,120.00,36.00,2025-03-15,North,Sarah Jenkins,New
+ORD-1026,Xavier Charles,Furniture,Filing Cabinet,1,130.00,130.00,39.00,2025-03-18,East,Mike Ross,Returning
+ORD-1027,Yennefer Vengerberg,Clothing,Silk Scarf,2,35.00,70.00,21.00,2025-03-21,South,Rachel Zane,New
+ORD-1028,Zack Snyder,Accessories,Wrist Watch,1,220.00,220.00,66.00,2025-03-24,West,Harvey Specter,Returning
+ORD-1029,Aaron Paul,Electronics,External Hard Drive,1,100.00,100.00,30.00,2025-03-27,North,Louis Litt,New
+ORD-1030,Bryan Cranston,Furniture,Monitor Stand,2,45.00,90.00,27.00,2025-03-30,East,Donna Paulsen,Returning
+ORD-1031,Claire Danes,Clothing,Jeans,2,55.00,110.00,33.00,2025-04-02,South,Sarah Jenkins,New
+ORD-1032,David Tenant,Accessories,Beanie Hat,3,15.00,45.00,13.50,2025-04-05,West,Mike Ross,Returning
+ORD-1033,Emma Watson,Electronics,Wireless Mouse,3,25.00,75.00,22.50,2025-04-08,North,Rachel Zane,New
+ORD-1034,Frank Castle,Furniture,Ergonomic Chair,1,250.00,250.00,75.00,2025-04-11,East,Harvey Specter,Returning
+ORD-1035,Grace Hopper,Clothing,Denim Jacket,1,60.00,60.00,18.00,2025-04-14,South,Louis Litt,New
+ORD-1036,Hank Pym,Accessories,Leather Wallet,1,40.00,40.00,12.00,2025-04-17,West,Donna Paulsen,Returning
+ORD-1037,Iris West,Electronics,Mechanical Keyboard,2,120.00,240.00,72.00,2025-04-20,North,Sarah Jenkins,New
+ORD-1038,Jack Sparrow,Furniture,Standing Desk,1,450.00,450.00,135.00,2025-04-23,East,Mike Ross,Returning
+ORD-1039,Katniss Everdeen,Clothing,Cotton T-Shirt,4,20.00,80.00,24.00,2025-04-26,South,Rachel Zane,New
+ORD-1040,Loki Laufeyson,Accessories,Sunglasses,1,50.00,50.00,15.00,2025-04-29,West,Harvey Specter,Returning
+ORD-1041,Matt Murdock,Electronics,27-inch Monitor,1,300.00,300.00,90.00,2025-05-02,North,Louis Litt,New
+ORD-1042,Nancy Wheeler,Furniture,Bookshelf,1,110.00,110.00,33.00,2025-05-05,East,Donna Paulsen,Returning
+ORD-1043,Oliver Queen,Clothing,Hoodie,3,45.00,135.00,40.50,2025-05-08,South,Sarah Jenkins,New
+ORD-1044,Peter Parker,Accessories,Backpack,2,70.00,140.00,42.00,2025-05-11,West,Mike Ross,Returning
+ORD-1045,Quinn Fabray,Electronics,Noise-Canceling Headphones,1,200.00,200.00,60.00,2025-05-14,North,Rachel Zane,New
+ORD-1046,Ron Weasley,Furniture,Office Desk,1,350.00,350.00,105.00,2025-05-17,East,Harvey Specter,Returning
+ORD-1047,Sam Wilson,Clothing,Dress Shirt,2,35.00,70.00,21.00,2025-05-20,South,Louis Litt,New
+ORD-1048,T'Challa Udaku,Accessories,Smartwatch,1,180.00,180.00,54.00,2025-05-23,West,Donna Paulsen,Returning
+ORD-1049,Ulysses Klaue,Electronics,USB-C Hub,2,30.00,60.00,18.00,2025-05-26,North,Sarah Jenkins,New
+ORD-1050,Valkyrie Brunnhilde,Furniture,Desk Lamp,1,40.00,40.00,12.00,2025-05-29,East,Mike Ross,Returning
+ORD-1051,Wade Wilson,Clothing,Sneakers,2,90.00,180.00,54.00,2025-06-01,South,Rachel Zane,New
+ORD-1052,Xena Warrior,Accessories,Leather Belt,1,25.00,25.00,7.50,2025-06-04,West,Harvey Specter,Returning
+ORD-1053,Yara Greyjoy,Electronics,Webcam 1080p,2,80.00,160.00,48.00,2025-06-07,North,Louis Litt,New
+ORD-1054,Zuri Tibideaux,Furniture,Executive Chair,1,500.00,500.00,150.00,2025-06-10,East,Donna Paulsen,Returning
+ORD-1055,Arthur Pendragon,Clothing,Winter Coat,1,150.00,150.00,45.00,2025-06-13,South,Sarah Jenkins,New
+ORD-1056,Bruce Wayne,Accessories,Travel Duffle,2,85.00,170.00,51.00,2025-06-16,West,Mike Ross,Returning
+ORD-1057,Clark Kent,Electronics,Bluetooth Speaker,1,60.00,60.00,18.00,2025-06-19,North,Rachel Zane,New
+ORD-1058,Diana Prince,Furniture,Filing Cabinet,2,130.00,260.00,78.00,2025-06-22,East,Harvey Specter,Returning
+ORD-1059,Evan Wright,Clothing,Silk Scarf,1,35.00,35.00,10.50,2025-06-25,South,Louis Litt,New
+ORD-1060,Fiona Gallagher,Accessories,Wrist Watch,1,220.00,220.00,66.00,2025-06-28,West,Donna Paulsen,Returning
+ORD-1061,John Doe,Electronics,External Hard Drive,2,100.00,200.00,60.00,2025-07-01,North,Sarah Jenkins,Returning
+ORD-1062,Jane Smith,Furniture,Monitor Stand,1,45.00,45.00,13.50,2025-07-04,East,Mike Ross,Returning
+ORD-1063,Alice Johnson,Clothing,Jeans,1,55.00,55.00,16.50,2025-07-07,South,Rachel Zane,Returning
+ORD-1064,Bob Brown,Accessories,Beanie Hat,2,15.00,30.00,9.00,2025-07-10,West,Harvey Specter,Returning
+ORD-1065,Charlie Davis,Electronics,Wireless Mouse,1,25.00,25.00,7.50,2025-07-13,North,Louis Litt,Returning
+ORD-1066,George Clark,Furniture,Ergonomic Chair,1,250.00,250.00,75.00,2025-07-16,East,Donna Paulsen,Returning
+ORD-1067,Hannah Abbott,Clothing,Denim Jacket,2,60.00,120.00,36.00,2025-07-19,South,Sarah Jenkins,Returning
+ORD-1068,Ian Malcolm,Accessories,Leather Wallet,1,40.00,40.00,12.00,2025-07-22,West,Mike Ross,Returning
+ORD-1069,Julia Roberts,Electronics,Mechanical Keyboard,1,120.00,120.00,36.00,2025-07-25,North,Rachel Zane,Returning
+ORD-1070,Kevin Bacon,Furniture,Standing Desk,1,450.00,450.00,135.00,2025-07-28,East,Harvey Specter,Returning
+ORD-1071,Laura Croft,Clothing,Cotton T-Shirt,3,20.00,60.00,18.00,2025-07-31,South,Louis Litt,Returning
+ORD-1072,Michael Scott,Accessories,Sunglasses,1,50.00,50.00,15.00,2025-08-03,West,Donna Paulsen,Returning
+ORD-1073,Nina Williams,Electronics,27-inch Monitor,2,300.00,600.00,180.00,2025-08-06,North,Sarah Jenkins,Returning
+ORD-1074,Oscar Martinez,Furniture,Bookshelf,1,110.00,110.00,33.00,2025-08-09,East,Mike Ross,Returning
+ORD-1075,Pam Beesly,Clothing,Hoodie,1,45.00,45.00,13.50,2025-08-12,South,Rachel Zane,Returning
+ORD-1076,Quentin Tarantino,Accessories,Backpack,1,70.00,70.00,21.00,2025-08-15,West,Harvey Specter,Returning
+ORD-1077,Rachel Green,Electronics,Noise-Canceling Headphones,1,200.00,200.00,60.00,2025-08-18,North,Louis Litt,Returning
+ORD-1078,Steve Rogers,Furniture,Office Desk,1,350.00,350.00,105.00,2025-08-21,East,Donna Paulsen,Returning
+ORD-1079,Tony Stark,Clothing,Dress Shirt,4,35.00,140.00,42.00,2025-08-24,South,Sarah Jenkins,Returning
+ORD-1080,Uma Thurman,Accessories,Smartwatch,1,180.00,180.00,54.00,2025-08-27,West,Mike Ross,Returning
+ORD-1081,Victor Vance,Electronics,USB-C Hub,3,30.00,90.00,27.00,2025-08-30,North,Rachel Zane,Returning
+ORD-1082,Wanda Maximoff,Furniture,Desk Lamp,2,40.00,80.00,24.00,2025-09-02,East,Harvey Specter,Returning
+ORD-1083,Xavier Charles,Clothing,Sneakers,1,90.00,90.00,27.00,2025-09-05,South,Louis Litt,Returning
+ORD-1084,Yennefer Vengerberg,Accessories,Leather Belt,1,25.00,25.00,7.50,2025-09-08,West,Donna Paulsen,Returning
+ORD-1085,Zack Snyder,Electronics,Webcam 1080p,1,80.00,80.00,24.00,2025-09-11,North,Sarah Jenkins,Returning
+ORD-1086,Aaron Paul,Furniture,Executive Chair,1,500.00,500.00,150.00,2025-09-14,East,Mike Ross,Returning
+ORD-1087,Bryan Cranston,Clothing,Winter Coat,1,150.00,150.00,45.00,2025-09-17,South,Rachel Zane,Returning
+ORD-1088,Claire Danes,Accessories,Travel Duffle,1,85.00,85.00,25.50,2025-09-20,West,Harvey Specter,Returning
+ORD-1089,David Tenant,Electronics,Bluetooth Speaker,2,60.00,120.00,36.00,2025-09-23,North,Louis Litt,Returning
+ORD-1090,Emma Watson,Furniture,Filing Cabinet,1,130.00,130.00,39.00,2025-09-26,East,Donna Paulsen,Returning
+ORD-1091,Frank Castle,Clothing,Silk Scarf,2,35.00,70.00,21.00,2025-09-29,South,Sarah Jenkins,Returning
+ORD-1092,Grace Hopper,Accessories,Wrist Watch,1,220.00,220.00,66.00,2025-10-02,West,Mike Ross,Returning
+ORD-1093,Hank Pym,Electronics,External Hard Drive,1,100.00,100.00,30.00,2025-10-05,North,Rachel Zane,Returning
+ORD-1094,Iris West,Furniture,Monitor Stand,1,45.00,45.00,13.50,2025-10-08,East,Harvey Specter,Returning
+ORD-1095,Jack Sparrow,Clothing,Jeans,2,55.00,110.00,33.00,2025-10-11,South,Louis Litt,Returning
+ORD-1096,Katniss Everdeen,Accessories,Beanie Hat,1,15.00,15.00,4.50,2025-10-14,West,Donna Paulsen,Returning
+ORD-1097,Loki Laufeyson,Electronics,Wireless Mouse,4,25.00,100.00,30.00,2025-10-17,North,Sarah Jenkins,Returning
+ORD-1098,Matt Murdock,Furniture,Ergonomic Chair,1,250.00,250.00,75.00,2025-10-20,East,Mike Ross,Returning
+ORD-1099,Nancy Wheeler,Clothing,Denim Jacket,1,60.00,60.00,18.00,2025-10-23,South,Rachel Zane,Returning
+ORD-1100,Oliver Queen,Accessories,Leather Wallet,2,40.00,80.00,24.00,2025-10-26,West,Harvey Specter,Returning
+ORD-1101,Peter Parker,Electronics,Mechanical Keyboard,1,120.00,120.00,36.00,2025-10-29,North,Louis Litt,Returning
+ORD-1102,Quinn Fabray,Furniture,Standing Desk,1,450.00,450.00,135.00,2025-11-01,East,Donna Paulsen,Returning
+ORD-1103,Ron Weasley,Clothing,Cotton T-Shirt,5,20.00,100.00,30.00,2025-11-04,South,Sarah Jenkins,Returning
+ORD-1104,Sam Wilson,Accessories,Sunglasses,2,50.00,100.00,30.00,2025-11-07,West,Mike Ross,Returning
+ORD-1105,T'Challa Udaku,Electronics,27-inch Monitor,1,300.00,300.00,90.00,2025-11-10,North,Rachel Zane,Returning
+ORD-1106,Ulysses Klaue,Furniture,Bookshelf,1,110.00,110.00,33.00,2025-11-13,East,Harvey Specter,Returning
+ORD-1107,Valkyrie Brunnhilde,Clothing,Hoodie,2,45.00,90.00,27.00,2025-11-16,South,Louis Litt,Returning
+ORD-1108,Wade Wilson,Accessories,Backpack,1,70.00,70.00,21.00,2025-11-19,West,Donna Paulsen,Returning
+ORD-1109,Xena Warrior,Electronics,Noise-Canceling Headphones,1,200.00,200.00,60.00,2025-11-22,North,Sarah Jenkins,Returning
+ORD-1110,Yara Greyjoy,Furniture,Office Desk,1,350.00,350.00,105.00,2025-11-25,East,Mike Ross,Returning
+ORD-1111,Zuri Tibideaux,Clothing,Dress Shirt,3,35.00,105.00,31.50,2025-11-28,South,Rachel Zane,Returning
+ORD-1112,Arthur Pendragon,Accessories,Smartwatch,1,180.00,180.00,54.00,2025-12-01,West,Harvey Specter,Returning
+ORD-1113,Bruce Wayne,Electronics,USB-C Hub,2,30.00,60.00,18.00,2025-12-04,North,Louis Litt,Returning
+ORD-1114,Clark Kent,Furniture,Desk Lamp,1,40.00,40.00,12.00,2025-12-07,East,Donna Paulsen,Returning
+ORD-1115,John Doe,Clothing,Sneakers,1,90.00,90.00,27.00,2025-12-10,South,Sarah Jenkins,Returning
+ORD-1116,Jane Smith,Accessories,Leather Belt,2,25.00,50.00,15.00,2025-12-13,West,Mike Ross,Returning
+ORD-1117,Alice Johnson,Electronics,Webcam 1080p,1,80.00,80.00,24.00,2025-12-16,North,Rachel Zane,Returning
+ORD-1118,Bob Brown,Furniture,Executive Chair,1,500.00,500.00,150.00,2025-12-19,East,Harvey Specter,Returning
+ORD-1119,Charlie Davis,Clothing,Winter Coat,1,150.00,150.00,45.00,2025-12-22,South,Louis Litt,Returning
+ORD-1120,George Clark,Accessories,Travel Duffle,1,85.00,85.00,25.50,2025-12-25,West,Donna Paulsen,Returning
+ORD-1121,Hannah Abbott,Electronics,Bluetooth Speaker,1,60.00,60.00,18.00,2025-01-14,North,Sarah Jenkins,Returning
+ORD-1122,Ian Malcolm,Furniture,Filing Cabinet,1,130.00,130.00,39.00,2025-02-18,East,Mike Ross,Returning
+ORD-1123,Julia Roberts,Clothing,Silk Scarf,3,35.00,105.00,31.50,2025-03-12,South,Rachel Zane,Returning
+ORD-1124,Kevin Bacon,Accessories,Wrist Watch,1,220.00,220.00,66.00,2025-04-19,West,Harvey Specter,Returning
+ORD-1125,Laura Croft,Electronics,External Hard Drive,2,100.00,200.00,60.00,2025-05-22,North,Louis Litt,Returning
+ORD-1126,Michael Scott,Furniture,Monitor Stand,1,45.00,45.00,13.50,2025-06-21,East,Donna Paulsen,Returning
+ORD-1127,Nina Williams,Clothing,Jeans,2,55.00,110.00,33.00,2025-07-15,South,Sarah Jenkins,Returning
+ORD-1128,Oscar Martinez,Accessories,Beanie Hat,1,15.00,15.00,4.50,2025-08-11,West,Mike Ross,Returning
+ORD-1129,Pam Beesly,Electronics,Wireless Mouse,2,25.00,50.00,15.00,2025-09-09,North,Rachel Zane,Returning
+ORD-1130,Quentin Tarantino,Furniture,Ergonomic Chair,1,250.00,250.00,75.00,2025-10-18,East,Harvey Specter,Returning
+ORD-1131,Rachel Green,Clothing,Denim Jacket,1,60.00,60.00,18.00,2025-11-05,South,Louis Litt,Returning
+ORD-1132,Steve Rogers,Accessories,Leather Wallet,1,40.00,40.00,12.00,2025-12-11,West,Donna Paulsen,Returning
+ORD-1133,Tony Stark,Electronics,Mechanical Keyboard,2,120.00,240.00,72.00,2025-01-29,North,Sarah Jenkins,Returning
+ORD-1134,Uma Thurman,Furniture,Standing Desk,1,450.00,450.00,135.00,2025-02-16,East,Mike Ross,Returning
+ORD-1135,Victor Vance,Clothing,Cotton T-Shirt,3,20.00,60.00,18.00,2025-03-22,South,Rachel Zane,Returning
+ORD-1136,Wanda Maximoff,Accessories,Sunglasses,1,50.00,50.00,15.00,2025-04-18,West,Harvey Specter,Returning
+ORD-1137,Xavier Charles,Electronics,27-inch Monitor,1,300.00,300.00,90.00,2025-05-19,North,Louis Litt,Returning
+ORD-1138,Yennefer Vengerberg,Furniture,Bookshelf,2,110.00,220.00,66.00,2025-06-14,East,Donna Paulsen,Returning
+ORD-1139,Zack Snyder,Clothing,Hoodie,1,45.00,45.00,13.50,2025-07-29,South,Sarah Jenkins,Returning
+ORD-1140,Aaron Paul,Accessories,Backpack,2,70.00,140.00,42.00,2025-08-25,West,Mike Ross,Returning
+ORD-1141,Bryan Cranston,Electronics,Noise-Canceling Headphones,1,200.00,200.00,60.00,2025-09-19,North,Rachel Zane,Returning
+ORD-1142,Claire Danes,Furniture,Office Desk,1,350.00,350.00,105.00,2025-10-15,East,Harvey Specter,Returning
+ORD-1143,David Tenant,Clothing,Dress Shirt,2,35.00,70.00,21.00,2025-11-21,South,Louis Litt,Returning
+ORD-1144,Emma Watson,Accessories,Smartwatch,1,180.00,180.00,54.00,2025-12-08,West,Donna Paulsen,Returning
+ORD-1145,Frank Castle,Electronics,USB-C Hub,3,30.00,90.00,27.00,2025-01-22,North,Sarah Jenkins,Returning
+ORD-1146,Grace Hopper,Furniture,Desk Lamp,1,40.00,40.00,12.00,2025-02-27,East,Mike Ross,Returning
+ORD-1147,Hank Pym,Clothing,Sneakers,2,90.00,180.00,54.00,2025-03-31,South,Rachel Zane,Returning
+ORD-1148,Iris West,Accessories,Leather Belt,1,25.00,25.00,7.50,2025-04-27,West,Harvey Specter,Returning
+ORD-1149,Jack Sparrow,Electronics,Webcam 1080p,1,80.00,80.00,24.00,2025-05-30,North,Louis Litt,Returning
+ORD-1150,Katniss Everdeen,Furniture,Executive Chair,1,500.00,500.00,150.00,2025-06-27,East,Donna Paulsen,Returning
+ORD-1151,Loki Laufeyson,Clothing,Winter Coat,1,150.00,150.00,45.00,2025-07-24,South,Sarah Jenkins,Returning
+ORD-1152,Matt Murdock,Accessories,Travel Duffle,1,85.00,85.00,25.50,2025-08-20,West,Mike Ross,Returning
+ORD-1153,Nancy Wheeler,Electronics,Bluetooth Speaker,2,60.00,120.00,36.00,2025-09-13,North,Rachel Zane,Returning
+ORD-1154,Oliver Queen,Furniture,Filing Cabinet,1,130.00,130.00,39.00,2025-10-12,East,Harvey Specter,Returning
+ORD-1155,Peter Parker,Clothing,Silk Scarf,1,35.00,35.00,10.50,2025-11-14,South,Louis Litt,Returning
+ORD-1156,Quinn Fabray,Accessories,Wrist Watch,1,220.00,220.00,66.00,2025-12-18,West,Donna Paulsen,Returning
+ORD-1157,Ron Weasley,Electronics,External Hard Drive,1,100.00,100.00,30.00,2025-01-19,North,Sarah Jenkins,Returning
+ORD-1158,Sam Wilson,Furniture,Monitor Stand,2,45.00,90.00,27.00,2025-02-23,East,Mike Ross,Returning
+ORD-1159,T'Challa Udaku,Clothing,Jeans,1,55.00,55.00,16.50,2025-03-28,South,Rachel Zane,Returning
+ORD-1160,Ulysses Klaue,Accessories,Beanie Hat,3,15.00,45.00,13.50,2025-04-24,West,Harvey Specter,Returning
+ORD-1161,Valkyrie Brunnhilde,Electronics,Wireless Mouse,2,25.00,50.00,15.00,2025-05-18,North,Louis Litt,Returning
+ORD-1162,Wade Wilson,Furniture,Ergonomic Chair,1,250.00,250.00,75.00,2025-06-19,East,Donna Paulsen,Returning
+ORD-1163,Xena Warrior,Clothing,Denim Jacket,2,60.00,120.00,36.00,2025-07-21,South,Sarah Jenkins,Returning
+ORD-1164,Yara Greyjoy,Accessories,Leather Wallet,1,40.00,40.00,12.00,2025-08-16,West,Mike Ross,Returning
+ORD-1165,Zuri Tibideaux,Electronics,Mechanical Keyboard,1,120.00,120.00,36.00,2025-09-22,North,Rachel Zane,Returning
+ORD-1166,Arthur Pendragon,Furniture,Standing Desk,1,450.00,450.00,135.00,2025-10-25,East,Harvey Specter,Returning
+ORD-1167,Bruce Wayne,Clothing,Cotton T-Shirt,4,20.00,80.00,24.00,2025-11-27,South,Louis Litt,Returning
+ORD-1168,Clark Kent,Accessories,Sunglasses,1,50.00,50.00,15.00,2025-12-20,West,Donna Paulsen,Returning
+ORD-1169,John Doe,Electronics,27-inch Monitor,1,300.00,300.00,90.00,2025-01-30,North,Sarah Jenkins,Returning
+ORD-1170,Jane Smith,Furniture,Bookshelf,1,110.00,110.00,33.00,2025-02-25,East,Mike Ross,Returning
+ORD-1171,Alice Johnson,Clothing,Hoodie,2,45.00,90.00,27.00,2025-03-16,South,Rachel Zane,Returning
+ORD-1172,Bob Brown,Accessories,Backpack,1,70.00,70.00,21.00,2025-04-12,West,Harvey Specter,Returning
+ORD-1173,Charlie Davis,Electronics,Noise-Canceling Headphones,1,200.00,200.00,60.00,2025-05-15,North,Louis Litt,Returning
+ORD-1174,George Clark,Furniture,Office Desk,1,350.00,350.00,105.00,2025-06-08,East,Donna Paulsen,Returning
+ORD-1175,Hannah Abbott,Clothing,Dress Shirt,2,35.00,70.00,21.00,2025-07-03,South,Sarah Jenkins,Returning
+ORD-1176,Ian Malcolm,Accessories,Smartwatch,1,180.00,180.00,54.00,2025-08-04,West,Mike Ross,Returning
+ORD-1177,Julia Roberts,Electronics,USB-C Hub,2,30.00,60.00,18.00,2025-09-01,North,Rachel Zane,Returning
+ORD-1178,Kevin Bacon,Furniture,Desk Lamp,1,40.00,40.00,12.00,2025-10-06,East,Harvey Specter,Returning
+ORD-1179,Laura Croft,Clothing,Sneakers,1,90.00,90.00,27.00,2025-11-09,South,Louis Litt,Returning
+ORD-1180,Michael Scott,Accessories,Leather Belt,2,25.00,50.00,15.00,2025-12-15,West,Donna Paulsen,Returning
