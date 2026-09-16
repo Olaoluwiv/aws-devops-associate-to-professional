@@ -2,19 +2,20 @@
 
 ## 🚀 Project Overview
 
-This project demonstrates how to deploy a containerized application to **Amazon ECS** and build toward a fully automated CI/CD pipeline using **GitHub Actions**.
+This project demonstrates how to deploy a containerized Python application to **Amazon ECS using AWS Fargate** and automate the deployment process with **GitHub Actions**.
 
-The project combines several AWS and DevOps technologies:
+The project brings together several AWS and DevOps technologies:
 
 * Docker
 * Amazon ECR
 * Amazon ECS
+* AWS Fargate
 * AWS IAM
+* AWS STS
 * GitHub Actions
 * GitHub OIDC
-* AWS Fargate
 
-The long-term deployment workflow is:
+The completed deployment workflow is:
 
 ```text
 Developer
@@ -28,7 +29,7 @@ GitHub Actions
     │
     │ OIDC authentication
     ▼
-AWS IAM
+AWS IAM / STS
     │
     ▼
 Docker Build
@@ -38,25 +39,25 @@ Amazon ECR
     │
     │ Container Image
     ▼
-Amazon ECS
-    │
-    ▼
 ECS Task Definition
     │
     ▼
 ECS Service
     │
     ▼
+AWS Fargate
+    │
+    ▼
 Running Application
 ```
 
-The purpose of this project is not only to deploy an application, but to understand how these services work together to create a practical cloud-based CI/CD workflow.
+The purpose of this project was not simply to deploy an application, but to understand how source control, CI/CD automation, containerization, AWS identity management, container registries, and container orchestration work together.
 
 ---
 
 # 🎯 Project Objectives
 
-The main objectives of this project are to:
+The project objectives were to:
 
 1. Containerize a Python application using Docker.
 2. Build and test the Docker image locally.
@@ -68,49 +69,53 @@ The main objectives of this project are to:
 8. Run the application on ECS using AWS Fargate.
 9. Configure GitHub Actions for automated deployment.
 10. Use GitHub OIDC instead of storing long-lived AWS access keys.
-11. Automatically build and push new Docker images.
-12. Automatically update the ECS task definition.
-13. Automatically deploy the updated application to ECS.
+11. Authenticate GitHub Actions with AWS IAM.
+12. Automatically build new Docker images.
+13. Push new images to Amazon ECR.
+14. Automatically update the ECS task definition.
+15. Automatically deploy the updated application to ECS.
+
+All core objectives have been completed.
 
 ---
 
 # 🧠 What This Project Demonstrates
 
-This project demonstrates practical knowledge of:
+This project demonstrates practical knowledge of several important DevOps concepts.
 
-### Containerization
+## Containerization
 
-The application is packaged into a Docker container so that it can run consistently across environments.
+The Python application is packaged into a Docker container so that the application and its dependencies can be deployed consistently.
 
-### Container Registry
+## Container Registry
 
-Amazon ECR stores the Docker images used by ECS.
+Amazon ECR provides a managed registry for storing the Docker images used by ECS.
 
-### Container Orchestration
+## Container Orchestration
 
-Amazon ECS manages the running container.
+Amazon ECS manages the deployment and lifecycle of the application container.
 
-### Serverless Containers
+## Serverless Containers
 
-AWS Fargate allows the container to run without managing EC2 servers directly.
+AWS Fargate runs the ECS workload without requiring the management of EC2 servers for the container infrastructure.
 
-### CI/CD
+## CI/CD
 
-GitHub Actions is used to automate the process of building and deploying the application.
+GitHub Actions automates the process of building, pushing, and deploying new versions of the application.
 
-### Secure AWS Authentication
+## Secure AWS Authentication
 
-GitHub OIDC allows GitHub Actions to assume an AWS IAM role without storing permanent AWS access keys in GitHub.
+GitHub OIDC allows GitHub Actions to obtain temporary AWS credentials through an IAM role instead of storing permanent AWS access keys in GitHub.
 
-### Infrastructure Integration
+## Deployment Automation
 
-The project demonstrates how multiple AWS services can be connected into one deployment workflow.
+A code push to the `master` branch can trigger the complete deployment workflow automatically.
 
 ---
 
 # 🏗️ Architecture
 
-The architecture for this project is:
+The completed architecture is:
 
 ```text
                     ┌──────────────────────┐
@@ -129,8 +134,9 @@ The architecture for this project is:
                     ┌──────────────────────┐
                     │   GitHub Actions     │
                     │                      │
+                    │  Checkout            │
                     │  Docker Build        │
-                    │  Docker Push         │
+                    │  ECR Push            │
                     │  ECS Deployment      │
                     └──────────┬───────────┘
                                │
@@ -142,37 +148,44 @@ The architecture for this project is:
                     │ GitHub Actions Role  │
                     └──────────┬───────────┘
                                │
-                 ┌─────────────┴─────────────┐
-                 ▼                           ▼
-        ┌─────────────────┐        ┌─────────────────┐
-        │   Amazon ECR    │        │   Amazon ECS    │
-        │                 │        │                 │
-        │ Docker Images   │───────▶│ Task Definition │
-        └─────────────────┘        │                 │
-                                   │ ECS Service     │
-                                   │                 │
-                                   └────────┬────────┘
-                                            │
-                                            ▼
-                                   ┌─────────────────┐
-                                   │ Running Docker  │
-                                   │   Application   │
-                                   └─────────────────┘
+                               ▼
+                    ┌──────────────────────┐
+                    │     Amazon ECR       │
+                    │                      │
+                    │   Docker Image       │
+                    └──────────┬───────────┘
+                               │
+                               │ New Image
+                               ▼
+                    ┌──────────────────────┐
+                    │     Amazon ECS       │
+                    │                      │
+                    │ Task Definition      │
+                    │        ↓             │
+                    │ ECS Service          │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │     AWS Fargate      │
+                    │                      │
+                    │ Running Container    │
+                    └──────────────────────┘
 ```
 
 ---
 
 # ☁️ AWS Services Used
 
-| Service        | Purpose                                     |
-| -------------- | ------------------------------------------- |
-| Amazon ECR     | Stores Docker container images              |
-| Amazon ECS     | Runs and manages containers                 |
-| AWS Fargate    | Provides serverless container compute       |
-| AWS IAM        | Controls permissions and authentication     |
-| AWS STS        | Allows GitHub Actions to assume an IAM role |
-| GitHub OIDC    | Provides temporary AWS authentication       |
-| GitHub Actions | Automates the CI/CD workflow                |
+| Service        | Purpose                                                  |
+| -------------- | -------------------------------------------------------- |
+| Amazon ECR     | Stores Docker container images                           |
+| Amazon ECS     | Runs and manages containers                              |
+| AWS Fargate    | Provides serverless container compute                    |
+| AWS IAM        | Controls permissions and authentication                  |
+| AWS STS        | Provides temporary credentials through role assumption   |
+| GitHub OIDC    | Provides federated authentication between GitHub and AWS |
+| GitHub Actions | Automates the CI/CD workflow                             |
 
 ---
 
@@ -218,7 +231,7 @@ The application is packaged using:
 app/Dockerfile
 ```
 
-The application listens on port:
+The application listens on:
 
 ```text
 5000
@@ -242,9 +255,7 @@ Verify the image:
 docker images
 ```
 
----
-
-# 🧪 Test the Container Locally
+## Test the Container Locally
 
 Run the container:
 
@@ -258,13 +269,13 @@ Check running containers:
 docker ps
 ```
 
-The application can then be tested locally through:
+The application can be tested locally through:
 
 ```text
 http://localhost:5000
 ```
 
-After testing, stop the container:
+Stop the container after testing:
 
 ```powershell
 docker stop <container-id>
@@ -274,9 +285,9 @@ docker stop <container-id>
 
 # 📦 Amazon ECR
 
-Amazon Elastic Container Registry (ECR) is used to store the Docker image.
+Amazon Elastic Container Registry (ECR) stores the Docker image used by the ECS deployment.
 
-The ECR repository used by this project is:
+Repository:
 
 ```text
 github-actions-ecs-app
@@ -288,17 +299,19 @@ AWS Region:
 us-east-1
 ```
 
-The repository URI is:
+Repository URI:
 
 ```text
 027174261562.dkr.ecr.us-east-1.amazonaws.com/github-actions-ecs-app
 ```
 
+The repository is used by GitHub Actions during the automated deployment.
+
 ---
 
 # 🔐 Authenticate Docker with ECR
 
-The AWS CLI can be used to authenticate Docker with ECR:
+For manual ECR authentication, the AWS CLI can be used:
 
 ```powershell
 aws ecr get-login-password --region us-east-1 |
@@ -309,6 +322,8 @@ docker login --username AWS --password-stdin 027174261562.dkr.ecr.us-east-1.amaz
 
 # 🏷️ Tag the Docker Image
 
+Example:
+
 ```powershell
 docker tag github-actions-ecs-app:latest `
 027174261562.dkr.ecr.us-east-1.amazonaws.com/github-actions-ecs-app:latest
@@ -318,12 +333,14 @@ docker tag github-actions-ecs-app:latest `
 
 # ⬆️ Push the Image to ECR
 
+Example:
+
 ```powershell
 docker push `
 027174261562.dkr.ecr.us-east-1.amazonaws.com/github-actions-ecs-app:latest
 ```
 
-The image can then be viewed from the Amazon ECR console.
+The automated GitHub Actions workflow uses the Git commit SHA instead of relying only on `latest`.
 
 ---
 
@@ -363,13 +380,15 @@ Network Mode: awsvpc
 Container Port: 5000
 ```
 
-The task definition uses an ECR image as the container image.
+The task definition references an Amazon ECR image.
+
+When GitHub Actions deploys a new image, the workflow creates a new task definition revision containing the new image.
 
 ---
 
 # 🔄 ECS Deployment Process
 
-When the application is deployed manually, the process is:
+The automated deployment process is:
 
 ```text
 Docker Image
@@ -378,19 +397,22 @@ Docker Image
 Amazon ECR
       │
       ▼
-ECS Task Definition
+Current ECS Task Definition
+      │
+      ▼
+Replace Container Image
       │
       ▼
 New Task Definition Revision
       │
       ▼
-ECS Service
+ECS Service Update
       │
       ▼
-Running Task
+New Running Task
 ```
 
-Each updated container image can be associated with a new ECS task definition revision.
+ECS then replaces the previous task with the updated version according to the service deployment configuration.
 
 ---
 
@@ -402,7 +424,7 @@ The GitHub Actions workflow is located at:
 .github/workflows/deploy.yml
 ```
 
-The workflow is triggered when changes are pushed to the `master` branch.
+The workflow is triggered when code is pushed to the `master` branch:
 
 ```yaml
 on:
@@ -411,15 +433,17 @@ on:
       - master
 ```
 
+The workflow performs the complete deployment automatically.
+
 ---
 
 # 🔑 GitHub OIDC Authentication
 
-One of the important security goals of this project is to avoid storing permanent AWS access keys inside GitHub.
+A major security goal of this project was to avoid storing permanent AWS credentials inside GitHub.
 
-Instead, GitHub Actions uses **OpenID Connect (OIDC)** to request a temporary identity token.
+GitHub Actions uses **OpenID Connect (OIDC)** to request an identity token.
 
-The flow is:
+The authentication flow is:
 
 ```text
 GitHub Actions
@@ -439,7 +463,7 @@ AWS IAM Role
 Temporary AWS Credentials
 ```
 
-This allows GitHub Actions to interact with AWS without requiring long-lived:
+This means the workflow does not require permanent:
 
 ```text
 AWS_ACCESS_KEY_ID
@@ -458,47 +482,48 @@ The IAM role created for the deployment workflow is:
 github-actions-ecs-deployment-role
 ```
 
-The role allows GitHub Actions to interact with the AWS resources required for deployment.
+The role provides the permissions required for the CI/CD deployment.
 
-The role includes permissions for operations such as:
+The ECS-related permissions include:
 
 ```text
 ecs:DescribeServices
 ecs:DescribeTaskDefinition
 ecs:RegisterTaskDefinition
 ecs:UpdateService
+```
+
+The role also requires:
+
+```text
 iam:PassRole
 ```
 
-The deployment role also has permissions required to interact with Amazon ECR.
+for the ECS task execution role and permissions required to interact with Amazon ECR.
 
 ---
 
 # 🛡️ IAM PassRole
 
-The GitHub Actions role needs permission to pass the ECS task execution role when registering the task definition.
-
-The ECS execution role used by the project is:
+The ECS task execution role used by the project is:
 
 ```text
 task-manager-ecs-execution-role
 ```
 
-The GitHub Actions role therefore requires:
+The GitHub Actions deployment role must be allowed to pass this role when registering the ECS task definition.
 
-```text
-iam:PassRole
-```
+This demonstrates an important AWS IAM concept:
 
-for that specific ECS execution role.
+> An identity may need explicit `iam:PassRole` permission when asking an AWS service to use another IAM role.
 
-This is an important AWS security concept because IAM controls which identities are allowed to pass roles to AWS services.
+The permission is restricted to the specific ECS execution role rather than granting unrestricted role-passing permissions.
 
 ---
 
-# 🔄 CI/CD Workflow
+# 🔄 Complete CI/CD Workflow
 
-The intended automated workflow is:
+The completed workflow is:
 
 ```text
 1. Developer changes application
@@ -513,36 +538,41 @@ The intended automated workflow is:
 4. GitHub Actions starts
              │
              ▼
-5. GitHub OIDC authenticates with AWS
+5. GitHub OIDC requests an identity token
              │
              ▼
-6. AWS IAM role is assumed
+6. AWS STS validates the token
              │
              ▼
-7. Docker image is built
+7. GitHub Actions assumes the AWS IAM role
              │
              ▼
-8. Image is pushed to Amazon ECR
+8. Docker image is built
              │
              ▼
-9. Current ECS task definition is retrieved
+9. Image is pushed to Amazon ECR
              │
              ▼
-10. Container image is replaced with
-    the new Git commit image
+10. Current ECS task definition is retrieved
              │
              ▼
-11. New ECS task definition revision
-    is registered
+11. Container image is replaced with the
+    new Git commit image
              │
              ▼
-12. ECS service is updated
+12. New ECS task definition revision is registered
              │
              ▼
-13. ECS deploys the new task
+13. ECS service is updated
              │
              ▼
-14. Application becomes available
+14. ECS deploys the new task
+             │
+             ▼
+15. Service waits for deployment stability
+             │
+             ▼
+16. New application version is running
 ```
 
 ---
@@ -551,29 +581,35 @@ The intended automated workflow is:
 
 The GitHub Actions workflow uses the Git commit SHA as the Docker image tag.
 
-Example:
+For example:
 
 ```text
 github-actions-ecs-app:<commit-sha>
 ```
 
-This is useful because every deployed image can be traced back to a specific Git commit.
+During the successful deployment, the image was tagged using the commit associated with the deployment.
 
-Instead of relying only on:
+This approach provides traceability between:
 
 ```text
-latest
+Git Commit
+     ↓
+Docker Image
+     ↓
+ECS Task Definition
+     ↓
+Running Application
 ```
 
-the deployment can identify exactly which version of the application is running.
+Using commit-based image tags also avoids depending exclusively on the mutable `latest` tag.
 
 ---
 
-# 📝 GitHub Actions Workflow
+# 📝 GitHub Actions Workflow Steps
 
-The deployment workflow performs these major operations:
+The deployment workflow performs the following operations.
 
-### 1. Checkout
+## 1. Checkout Source Code
 
 ```yaml
 uses: actions/checkout@v4
@@ -581,7 +617,21 @@ uses: actions/checkout@v4
 
 Downloads the repository code into the GitHub Actions runner.
 
-### 2. Authenticate with AWS
+## 2. Debug GitHub OIDC Claims
+
+The workflow includes an OIDC debugging step that can display claims such as:
+
+```text
+issuer
+audience
+subject
+repository
+ref
+```
+
+This was useful while configuring and validating the IAM trust relationship.
+
+## 3. Configure AWS Credentials
 
 ```yaml
 uses: aws-actions/configure-aws-credentials@v4
@@ -589,7 +639,7 @@ uses: aws-actions/configure-aws-credentials@v4
 
 Uses GitHub OIDC to obtain temporary AWS credentials.
 
-### 3. Login to ECR
+## 4. Login to Amazon ECR
 
 ```yaml
 uses: aws-actions/amazon-ecr-login@v2
@@ -597,43 +647,65 @@ uses: aws-actions/amazon-ecr-login@v2
 
 Authenticates Docker with Amazon ECR.
 
-### 4. Build Docker Image
+## 5. Build Docker Image
+
+The workflow runs:
 
 ```text
 docker build
 ```
 
-Builds the application image.
+against:
 
-### 5. Push Image to ECR
+```text
+./day-26/github-actions-ecs-deployment/app
+```
+
+## 6. Push Image to ECR
+
+The workflow runs:
 
 ```text
 docker push
 ```
 
-Uploads the image to the ECR repository.
+and stores the image in:
 
-### 6. Render ECS Task Definition
+```text
+github-actions-ecs-app
+```
+
+## 7. Retrieve ECS Task Definition
+
+The current task definition is downloaded so that the workflow can update its container image.
+
+## 8. Render the New Task Definition
 
 ```yaml
 uses: aws-actions/amazon-ecs-render-task-definition@v1
 ```
 
-Updates the container image in the ECS task definition.
+This updates the container image reference in the task definition.
 
-### 7. Deploy to ECS
+## 9. Deploy to ECS
 
 ```yaml
 uses: aws-actions/amazon-ecs-deploy-task-definition@v2
 ```
 
-Registers the new task definition and updates the ECS service.
+The new task definition is deployed to:
+
+```text
+task-manager-service
+```
+
+The workflow waits for the ECS service to reach a stable state.
 
 ---
 
-# 🧪 Testing the Deployment
+# 🧪 Deployment Verification
 
-After deployment, check the ECS service:
+After a successful GitHub Actions run, the ECS service can be checked through:
 
 ```text
 Amazon ECS
@@ -645,134 +717,169 @@ task-manager-cluster
 task-manager-service
 ```
 
-Check:
+Important items to verify include:
 
-* Desired tasks
-* Running tasks
-* Task health
+* Desired task count
+* Running task count
+* Task status
 * Task definition revision
 * Container status
-* Public IP / networking configuration
+* ECS service events
+* Network configuration
+* Application accessibility
 
-The application can then be accessed through the address assigned to the running ECS task when the network configuration allows public access.
-
----
-
-# 🔍 Troubleshooting
-
-## GitHub Actions Cannot Assume AWS Role
-
-If GitHub Actions returns:
-
-```text
-Could not assume role with OIDC:
-Not authorized to perform sts:AssumeRoleWithWebIdentity
-```
-
-check the following:
-
-### OIDC provider
-
-Confirm that the AWS account contains:
-
-```text
-token.actions.githubusercontent.com
-```
-
-with the expected audience:
-
-```text
-sts.amazonaws.com
-```
-
-### IAM trust policy
-
-The IAM role trust relationship must allow:
-
-```text
-sts:AssumeRoleWithWebIdentity
-```
-
-from the GitHub OIDC provider.
-
-The trust policy must also match the GitHub OIDC token claims.
-
-The workflow includes a debugging step that can display claims such as:
-
-```text
-issuer
-audience
-subject
-repository
-ref
-```
-
-These values are useful when troubleshooting IAM trust relationships.
+The project successfully reached the stage where the GitHub Actions deployment completed with all deployment steps green.
 
 ---
 
-# 🐳 Docker Build Problems
+# 🔍 Troubleshooting and Lessons From Real Errors
 
-If Docker cannot find the application directory, verify that the workflow is being executed from the repository root.
+The project included several real troubleshooting situations. These were useful because they demonstrated that a CI/CD pipeline can fail at different layers.
 
-The application path is:
+---
+
+## 1. GitHub Actions YAML Syntax Error
+
+Initially, the workflow failed before executing because Markdown code fences had accidentally been included inside the YAML workflow.
+
+The file contained Markdown formatting similar to:
+
+````text
+```yaml
+````
+
+and:
+
+```text
+```
+
+````
+
+Those code fences are appropriate when displaying YAML inside documentation, but they must **not** be placed inside the actual `.github/workflows/deploy.yml` file.
+
+The workflow was corrected so that the first line was:
+
+```yaml
+name: Deploy to Amazon ECS
+````
+
+and the file contained only valid YAML.
+
+### Lesson
+
+A code block shown in documentation is not the same thing as the actual configuration file.
+
+---
+
+# 🌐 2. Temporary GitHub Network Connectivity Problem
+
+While pushing the workflow changes, Git initially returned:
+
+```text
+Failed to connect to github.com:443
+```
+
+Connectivity testing showed:
+
+```text
+google.com:443 → True
+github.com:443 → False
+```
+
+A later connectivity test showed:
+
+```text
+github.com:443 → True
+```
+
+The push then succeeded.
+
+### Lesson
+
+Before changing Git configuration, test network connectivity. A temporary connection failure does not necessarily indicate a repository or Git configuration problem.
+
+---
+
+# 📦 3. ECR Repository Not Found
+
+After the GitHub Actions workflow successfully authenticated with AWS and built the Docker image, the ECR push initially failed with:
+
+```text
+The repository with name 'github-actions-ecs-app'
+does not exist in the registry
+```
+
+The repository was verified using:
+
+```powershell
+aws ecr describe-repositories `
+  --repository-names github-actions-ecs-app `
+  --region us-east-1
+```
+
+The repository was then created:
+
+```powershell
+aws ecr create-repository `
+  --repository-name github-actions-ecs-app `
+  --region us-east-1
+```
+
+After the repository existed, the GitHub Actions workflow was rerun.
+
+The Docker image successfully pushed to ECR.
+
+### Lesson
+
+AWS authentication can succeed while a deployment still fails because the target AWS resource does not exist.
+
+This is an important distinction:
+
+```text
+Authentication successful
+        ≠
+Resource configuration complete
+```
+
+---
+
+# 🐳 4. Docker Build Successfully Completed
+
+The workflow successfully built the application image from:
 
 ```text
 ./day-26/github-actions-ecs-deployment/app
 ```
 
-Example:
+The image was tagged using the Git commit SHA.
 
-```powershell
-docker build -t github-actions-ecs-app:latest ./day-26/github-actions-ecs-deployment/app
-```
+This confirmed that the GitHub Actions runner could:
 
----
-
-# 📦 ECR Push Problems
-
-If Docker cannot push to ECR, check:
-
-* AWS authentication
-* ECR repository name
-* AWS region
-* IAM permissions
-* Docker ECR login
-
-Verify the AWS account:
-
-```powershell
-aws sts get-caller-identity
-```
+* Access the application source code.
+* Read the Dockerfile.
+* Install Python dependencies.
+* Build the Docker image.
+* Tag the image correctly.
 
 ---
 
-# 🚢 ECS Deployment Problems
+# 🚢 5. ECS Deployment Successfully Completed
 
-If ECS deployment fails, check:
+After the ECR repository was available, the workflow successfully completed:
 
 ```text
-ECS Cluster
-    ↓
-ECS Service
-    ↓
-Task Definition
-    ↓
-Task
-    ↓
-Container
+Download current ECS task definition
+        ↓
+Update ECS task definition
+        ↓
+Deploy updated task definition
+        ↓
+Wait for ECS service stability
 ```
 
-Also check:
+All GitHub Actions deployment steps completed successfully.
 
-* ECS task status
-* ECS service events
-* CloudWatch logs
-* Security groups
-* Subnets
-* IAM task execution role
-* Container port
-* ECR image URI
+This confirmed that the complete automated deployment path was functioning.
 
 ---
 
@@ -791,6 +898,7 @@ Important security practices include:
 * Restrict the GitHub OIDC trust policy to the intended repository and branch where appropriate.
 * Use unique image tags such as Git commit SHAs.
 * Avoid giving GitHub Actions unnecessary administrative permissions.
+* Restrict `iam:PassRole` to the intended ECS execution role.
 
 ---
 
@@ -801,7 +909,7 @@ Important security practices include:
 * [x] Python application created
 * [x] Dockerfile created
 * [x] Application tested locally
-* [x] Docker image built
+* [x] Docker image built locally
 * [x] Amazon ECR repository created
 * [x] Docker image pushed to ECR
 * [x] Amazon ECS cluster created
@@ -811,22 +919,47 @@ Important security practices include:
 * [x] GitHub Actions workflow created
 * [x] GitHub OIDC provider configured
 * [x] GitHub Actions IAM deployment role created
-* [x] GitHub OIDC debugging added to workflow
+* [x] OIDC trust relationship configured
+* [x] OIDC claims debugging added
+* [x] GitHub Actions authenticated with AWS
+* [x] Docker image built automatically
+* [x] Docker image pushed automatically to ECR
+* [x] ECS task definition updated automatically
+* [x] ECS service updated automatically
+* [x] ECS deployment completed successfully
+* [x] ECS service reached deployment stability
 
-## In Progress
+## Current State
 
-* [ ] Complete GitHub Actions OIDC role-assumption troubleshooting
-* [ ] Successfully authenticate GitHub Actions with AWS
-* [ ] Complete automated ECR deployment
-* [ ] Verify automatic ECS deployment after `git push`
+**Day 26 core CI/CD implementation is complete.**
+
+A push to the configured `master` branch can trigger the automated workflow:
+
+```text
+Git Push
+    ↓
+GitHub Actions
+    ↓
+AWS OIDC
+    ↓
+IAM
+    ↓
+Docker Build
+    ↓
+Amazon ECR
+    ↓
+ECS Task Definition
+    ↓
+ECS Service
+    ↓
+Running Application
+```
 
 ---
 
 # 📚 What I Learned
 
-This project helped demonstrate that a CI/CD pipeline is more than simply running a GitHub Actions workflow.
-
-The deployment requires several layers to work together:
+This project reinforced that a production-style CI/CD pipeline is made up of multiple connected layers.
 
 ```text
 Git
@@ -850,15 +983,47 @@ Fargate
 Application
 ```
 
-A failure at any layer can prevent the deployment from completing.
+Each layer has a different responsibility.
 
-The troubleshooting process is therefore an important part of the learning experience.
+### Git
+
+Provides source control and triggers the deployment process.
+
+### GitHub Actions
+
+Provides the automation engine.
+
+### OIDC
+
+Provides a secure identity mechanism between GitHub and AWS.
+
+### IAM
+
+Controls what the GitHub Actions workflow is allowed to do.
+
+### ECR
+
+Stores the container image.
+
+### ECS
+
+Manages the application container.
+
+### Fargate
+
+Provides the compute environment for the container.
+
+The troubleshooting process also reinforced an important DevOps principle:
+
+> When an automated deployment fails, isolate the failure by layer instead of changing multiple components at once.
 
 ---
 
 # 🚀 Future Improvements
 
-After completing the automated deployment, possible improvements include:
+Although the core Day 26 deployment is complete, the pipeline can be extended further.
+
+Possible improvements include:
 
 * Add automated application tests.
 * Add Docker image vulnerability scanning.
@@ -867,10 +1032,13 @@ After completing the automated deployment, possible improvements include:
 * Add deployment notifications.
 * Add environment-specific deployments.
 * Add staging and production environments.
-* Implement ECS blue/green deployment.
-* Add rollback strategies.
+* Implement ECS blue/green deployments.
+* Add automated rollback strategies.
 * Add infrastructure as code using Terraform or AWS CloudFormation.
 * Add deployment approval gates.
+* Add pull-request validation workflows.
+* Add branch protection rules.
+* Add automated cleanup of old ECR images.
 
 ---
 
@@ -953,9 +1121,13 @@ aws ecs describe-task-definition `
 
 ---
 
-# 🎓 Project Goal
+# 🎓 Project Outcome
 
-The final goal of this Day 26 project is to reach a point where a developer can make a code change and run:
+The original goal of this project was to move from manual container deployment toward automated CI/CD.
+
+That goal has now been achieved.
+
+A developer can make an application change and run:
 
 ```powershell
 git add .
@@ -963,7 +1135,7 @@ git commit -m "Update application"
 git push origin master
 ```
 
-and the rest of the deployment happens automatically:
+The deployment process can then proceed automatically:
 
 ```text
 Git Push
@@ -985,7 +1157,19 @@ ECS Service
 New Application Version
 ```
 
-This represents the transition from **manual cloud deployment** toward an automated **CI/CD deployment workflow**.
+This project demonstrates the practical transition from:
+
+```text
+Manual Deployment
+```
+
+to:
+
+```text
+Automated CI/CD
+```
+
+using GitHub Actions, AWS OIDC, Amazon ECR, Amazon ECS, and AWS Fargate.
 
 ---
 
