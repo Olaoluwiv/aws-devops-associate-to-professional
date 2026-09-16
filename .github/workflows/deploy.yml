@@ -7,12 +7,12 @@ on:
       - master
 
 env:
-  AWS_REGION: us-east-1
-  ECR_REPOSITORY: github-actions-ecs-app
-  ECS_CLUSTER: task-manager-cluster
-  ECS_SERVICE: task-manager-service
-  ECS_TASK_DEFINITION: task-manager-task
-  CONTAINER_NAME: task-manager-container
+  AWS_REGION: "us-east-1"
+  ECR_REPOSITORY: "github-actions-ecs-app"
+  ECS_CLUSTER: "task-manager-cluster"
+  ECS_SERVICE: "task-manager-service"
+  ECS_TASK_DEFINITION: "task-manager-task"
+  CONTAINER_NAME: "task-manager-container"
 
 permissions:
   id-token: write
@@ -24,7 +24,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout source code
         uses: actions/checkout@v4
 
@@ -46,9 +45,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::027174261562:role/github-actions-ecs-deployment-role
-          aws-region: ${{ env.AWS_REGION }}
-          role-session-name: GitHubActions-${{ github.run_id }}
+          role-to-assume: "arn:aws:iam::027174261562:role/github-actions-ecs-deployment-role"
+          aws-region: "${{ env.AWS_REGION }}"
+          role-session-name: "GitHubActions-${{ github.run_id }}"
           output-credentials: false
           role-duration-seconds: 3600
 
@@ -59,8 +58,8 @@ jobs:
       - name: Build, tag and push Docker image
         id: build-image
         env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: ${{ github.sha }}
+          ECR_REGISTRY: "${{ steps.login-ecr.outputs.registry }}"
+          IMAGE_TAG: "${{ github.sha }}"
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./day-26/github-actions-ecs-deployment/app
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
@@ -78,14 +77,14 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           task-definition: task-definition.json
-          container-name: ${{ env.CONTAINER_NAME }}
-          image: ${{ steps.build-image.outputs.image }}
+          container-name: "${{ env.CONTAINER_NAME }}"
+          image: "${{ steps.build-image.outputs.image }}"
 
       - name: Deploy updated task definition to ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v2
         with:
-          task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: ${{ env.ECS_SERVICE }}
-          cluster: ${{ env.ECS_CLUSTER }}
+          task-definition: "${{ steps.task-def.outputs.task-definition }}"
+          service: "${{ env.ECS_SERVICE }}"
+          cluster: "${{ env.ECS_CLUSTER }}"
           wait-for-service-stability: true
 ```
