@@ -1,3 +1,4 @@
+```yaml
 name: Deploy to Amazon ECS
 
 on:
@@ -47,6 +48,9 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::027174261562:role/github-actions-ecs-deployment-role
           aws-region: ${{ env.AWS_REGION }}
+          role-session-name: GitHubActions-${{ github.run_id }}
+          output-credentials: false
+          role-duration-seconds: 3600
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -84,3 +88,4 @@ jobs:
           service: ${{ env.ECS_SERVICE }}
           cluster: ${{ env.ECS_CLUSTER }}
           wait-for-service-stability: true
+```
